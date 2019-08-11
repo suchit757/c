@@ -2,7 +2,7 @@
 
 int main()
 {
-	int arr[10] = {18,4,8,21,12,25,2,22,3,0},max = 0;
+	int arr[12] = {18,1,-2,4,8,21,12,25,2,22,3,0},max = 0;
 	max = secondLargest(arr,10);
 	printf("%d\n",max);
 	return 0;
