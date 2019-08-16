@@ -1,16 +1,18 @@
 #include<stdio.h>
 
+void occur(int*,int,int*,int*);
+
 int main()
 {
-	int maxc=0;
+	int maxc=0,mcount = 0, num = 0;
 	int arr[10] = {1,3,3,2,3,4,2,4,56,3};
-	maxc = occur(arr,10);
-	printf("%d\n",maxc);
+	occur(arr,10,&mcount,&num);
+	printf("%d number occurs %d times\n",num,mcount);
 	return 0;
 }
-int occur(int *iprt,int len)
+void occur(int *iprt,int len,int*mcount,int*number)
 {
-	int count=0,mcount=0,number=0,i=0,j=0;
+	int count=0,i=0,j=0;
 	
 	for(i=0;i<len;i++)
 	{
@@ -22,11 +24,10 @@ int occur(int *iprt,int len)
                                 count++;
                         }
 		}
-		if(mcount<count)
+		if(*mcount<count)
                 {
-                        mcount=count;
-                        number=iprt[i];
+                        *mcount=count;
+                        *number=iprt[i];
                 }
 	}
-	return number;
 }
